@@ -2,12 +2,5 @@
 <StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
     <cacheControl>Public</cacheControl>
     <contentType>text/xml</contentType>
-    <description>This is a test config file
-
-Preview:
-
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
-&lt;config&gt;
-
-&lt;/config&gt;</description>
+    <description>This is a test config file</description>
 </StaticResource>

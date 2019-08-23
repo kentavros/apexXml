@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <config>
-
+	<testRootNode>
+		<testChildNode>Bla Bla</testChildNode>
+	</testRootNode>
 </config>
