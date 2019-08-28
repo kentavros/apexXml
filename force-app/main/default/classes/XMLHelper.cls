@@ -1,28 +1,39 @@
 global class XMLHelper {
     
+    public static Dom.Document modifyXML(String fileName) {
+        Dom.Document XMLConfig = getFileFromStaticResource(fileName, new Dom.Document());
+
+        addSomeThingToXML(XMLConfig);
+
+        return XMLConfig;
+    }
     
-    
-    public static Dom.XmlNode getFileFromStaticResource(String fileName) {
-        Dom.XmlNode rootElement;
+    public static Dom.Document getFileFromStaticResource(String fileName, Dom.Document XMLConfig) {
 
         try {
 
             StaticResource staticResourceConfig = [SELECT Body FROM StaticResource WHERE Name = :fileName LIMIT 1];
             String xmlStringContent = staticResourceConfig.Body.toString();
 
-            System.debug(staticResourceConfig);
             System.debug(xmlStringContent);
-
-            Dom.Document XMLConfig = new Dom.Document();
+            
 		    XMLConfig.load(xmlStringContent);
-
-            rootElement = XMLConfig.getRootElement();
-
 
         } catch(Exception e) {
             System.debug('Error XMLHelper.getFileFromStaticResource ' + e.getMessage() + ' Line: ' +e.getLineNumber());
         }
 
-        return rootElement;
+        return XMLConfig;
     }
+
+
+    public static void addSomeThingToXML(Dom.Document XMLConfig) {
+
+        for (Dom.XmlNode node : XMLConfig.getRootElement().getChildElements()) {
+
+            node.addChildElement('newChild', null, null);
+        } 
+
+    }
+
 }
