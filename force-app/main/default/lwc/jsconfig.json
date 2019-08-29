@@ -1,7 +1,11 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
-        "paths": {},
+        "paths": {
+            "c/jszip": [
+                "../staticresources/jszip/jszip.js"
+            ]
+        },
         "experimentalDecorators": true
     },
     "include": [
