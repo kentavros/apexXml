@@ -1,3 +1,18 @@
+#Update XML Body in StaticResource
+
+We have XML file in StaticResource with name - configForTest
+
+```xml
+  <?xml version="1.0" encoding="utf-8" ?>
+  <config>
+    <testRootNode>
+      <testChildNode>Bla Bla</testChildNode>
+    </testRootNode>
+  </config>
+```
+
+
+
 # Salesforce App
 
 This guide helps Salesforce developers who are new to Visual Studio Code go from zero to a deployed app using Salesforce Extensions for VS Code and Salesforce CLI.
